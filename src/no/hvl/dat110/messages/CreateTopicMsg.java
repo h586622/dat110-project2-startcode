@@ -4,6 +4,32 @@ public class CreateTopicMsg extends Message {
 	
 	// message sent from client to create topic on the broker
 	
+	private String topic;
+	
+	public CreateTopicMsg(String user, String topic) {
+		super(MessageType.CREATETOPIC, user);
+		this.topic = topic;
+	}
+	
+	public CreateTopicMsg(String topic, String user, MessageType type) {
+		super(type, user);
+		this.topic = topic;		
+	}
+
+
+	public String getTopic() {
+		return topic;
+	}
+
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+	
+	public String toString() {
+		return "Topic is " + topic;
+	}
+	
 	// TODO: 
 	// Implement object variables - a topic is required
 	
